@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wishlist</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'store/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Wishlist</h1>
+        <ul class="products">
+        {% for product in wishlist.products.all %}
+            <li>
+                <a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a>
+                <p>${{ product.price }}</p>
+                <button class="remove-from-wishlist" data-product-id="{{ product.pk }}">Remove from wishlist</button>
+                <br>
+                <img src="{{ product.image }}" alt="{{ product.name }}">
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

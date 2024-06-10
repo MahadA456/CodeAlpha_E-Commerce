@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.site-header {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar li {
+    margin-left: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #007bff;
+}
+
+main {
+    padding: 20px 0;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+}
+
+.product-list,
+.wishlist,
+.cart-detail,
+.checkout,
+.order-confirmation,
+.product-detail {
+    text-align: center;
+}
+
+.product-list .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-list .product,
+.wishlist ul li,
+.cart-detail ul li {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+}
+
+.product-list .product img,
+.product-detail img {
+    width: 100%;
+    height: auto;
+}
+
+.auth-form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.auth-form h1 {
+    text-align: center;
+}
+
+.auth-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-form form button {
+    margin-top: 10px;
+}
+
+.auth-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.auth-links .btn {
+    margin: 0 10px;
+}

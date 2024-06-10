@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Confirmation</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'store/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Thank you for your order!</h1>
+        <a href="{% url 'product_list' %}">Continue Shopping</a>
+    </div>
+</body>
+</html>

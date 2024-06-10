@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'store/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Products</h1>
+        <div class="search-bar">
+            <form method="get" action="{% url 'product_list' %}">
+                <input type="text" name="q" placeholder="Search for products..." value="{{ request.GET.q }}">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="product-list">
+            {% for product in products %}
+                <div class="product">
+                    <a href="{% url 'product_detail' product.pk %}">
+                        <img src="{{ product.image }}" alt="{{ product.name }}">
+                        <h2>{{ product.name }}</h2>
+                    </a>
+                    <p>${{ product.price }}</p>
+                    <a href="{% url 'add_to_cart' product.pk %}" class="add-to-cart">Add to cart</a>
+                    <a href="{% url 'add_to_wishlist' product.pk %}" class="add-to-wishlist">Add to wishlist</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

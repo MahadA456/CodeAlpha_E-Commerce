@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'store/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Cart</h1>
+        <ul>
+            {% for item in cart_items %}
+                <li>{{ item.product.name }} - ${{ item.product.price }} x {{ item.quantity }}
+                <form action="{% url 'update_cart' item.pk %}" method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <input type="number" name="quantity" value="{{ item.quantity }}">
+                    <button type="submit">Update</button>
+                </form>
+                <form action="{% url 'remove_from_cart' item.pk %}" method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit">Remove</button>
+                </form>
+                </li>
+            {% endfor %}
+        </ul>
+        <h2>Total: ${{ total }}</h2>
+        <a href="{% url 'checkout' %}">Checkout</a>
+    </div>
+</body>
+</html>
